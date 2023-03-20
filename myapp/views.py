@@ -4,9 +4,14 @@ from .models import *
 from .serializer import *
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.filters import SearchFilter
+from .pagination import *
 class StudentViewSet(ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['name']
+    pagination_class = CustomPagination
 class SubjectViewSet(ModelViewSet):
     queryset = Subject.objects.all()
     serializer_class = SubjectSerializer

@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 from multiselectfield import MultiSelectField
+from cloudinary.models import CloudinaryField
 from django.utils.html import format_html
 # Create your models here.
 class Student(models.Model):
     name = models.CharField(max_length = 150,null=True,blank=True)
     age = models.IntegerField(blank=True, null=True)
-    image = models.ImageField(upload_to='student-images',blank=True, null=True)
+    image = CloudinaryField('image')
     birth = models.DateField(blank=True, null=True)
     type = (
         ('uzbek','Uzbek'),

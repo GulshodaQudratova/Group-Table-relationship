@@ -130,3 +130,17 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+########### Cloudinary ################
+import cloudinary.uploader
+import cloudinary.api
+import cloudinary
+cloudinary.config(
+  cloud_name = "dfiex0hyg",
+  api_key = "842454891661488",
+  api_secret = "FZHKDjLohPzDfvohT5_Mg1mvtKM",
+)
+######################################
+# REST_FRAMEWORK = {
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE': 2
+# }
