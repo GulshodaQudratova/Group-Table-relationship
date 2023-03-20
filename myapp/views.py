@@ -67,7 +67,6 @@ class GroupViewSet(ModelViewSet):
                 try:
                     student = Student.objects.get(id = student['id'])
                     group_object.student.remove(student)
-                    
                 except Student.DoesNotExist:
                     pass
         group_object.name = data.get('name',group_object.name)
